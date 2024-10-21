@@ -74,7 +74,7 @@
         <input type="text" id="total" name="total" placeholder="Total Fee" readonly>
       </li>
       <button type="button" onclick="calculateTotal()">Calculate Total Fee</button>
-      <button type="button" onclick="validateAndSubmit()">Submit</button>
+      <button type="button" onclick="validateAndSubmit()">Request</button>
     </form>
     <br>
   </main>
@@ -157,7 +157,7 @@
         return; 
       }
 
-      alert('Purchase successful!');
+      alert('Consultant Requested');
 
       document.getElementById('fname').value = '';
       document.getElementById('email').value = '';
