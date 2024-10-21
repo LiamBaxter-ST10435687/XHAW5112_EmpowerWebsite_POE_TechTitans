@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn New Skills Today</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="_images/logo.png" />
+    <p>Empowering the Nation</p>
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+  <div class="back-button-container">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+  </div>
+
+  <div id="course-details">
+    <div id="img">
+      <img id="course-image" alt="Course Image" />
+    </div>
+    <hr>
+    <div class="hero-text">
+      <h1 id="course-title"></h1>
+    </div>
+    <h1 class="center">Course Description</h1>
+    <hr>
+    <div class="text">
+      <p id="course-description"></p>
+    </div>
+    <hr>
+    <h2 class="text">Lesson Plan</h2>
+    <div class="text">
+      <ul id="course-lessonPlan"></ul> 
+    </div>
+    <div class="text">
+      <b>
+        <p id="course-price"></p>
+      </b>
+    </div>
+    <div class="text">
+      <button id="enrol-button">Enrol</button> 
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Empowering The Nation <br>Owners Email: MathhewM32@gmail.com <br> Business Email:
+      Empowering22@yahoo.co.za</p>
+
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+      </div>
+    </nav>
+  </footer>
+
+  <script>
+    const selectedCourse = JSON.parse(localStorage.getItem('selectedCourse'));
+
+    if (selectedCourse) {
+      document.getElementById('course-title').innerText = selectedCourse.title;
+      document.getElementById('course-price').innerText = selectedCourse.price;
+      document.getElementById('course-description').innerText = selectedCourse.description;
+
+      
+      const lessonPlanList = document.getElementById('course-lessonPlan');
+      selectedCourse.lessonPlan.forEach(lesson => {
+        const listItem = document.createElement('li');
+        listItem.innerText = lesson;
+        lessonPlanList.appendChild(listItem);
+      });
+
+      document.getElementById('course-image').src = selectedCourse.imgSrc;
+    } else {
+      alert('No course selected!');
+    }
+
+    
+    document.getElementById('enrol-button').addEventListener('click', function () {
+      window.location.href = 'fees.html';
+    });
+  </script>
+</body>
+
+</html>

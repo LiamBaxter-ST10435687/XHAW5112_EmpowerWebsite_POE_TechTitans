@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+
+  <link href="styles.css" rel="stylesheet">
+  </link>
+</head>
+
+<body>
+  <header id="header">
+    <img src="_images/logo.png" />
+    <p>Empowering the Nation</p>
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+  <div class="back-button-container">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+  </div>
+
+  <div class="hero-shot">
+    <div class="hero-text">We'd Love to Hear From You</div>
+
+    <div class="social-icons">
+      <a href="#"><img src="_images/media/facebook.jpg" alt="Facebook"><span>@EmpoweringNation</span></a>
+      <a href="#"><img src="_images/media/twitter.jpg" alt="Twitter"><span>@Empowering_Tweets</span></a>
+      <a href="#"><img src="_images/media/instagram.jpg" alt="Instagram"><span>@EmpoweringGram</span></a>
+      <a href="#"><img src="_images/media/youtube.jpg" alt="YouTube"><span>@EmpowerTube</span></a>
+      <a href="#"><img src="_images/media/yahoo.jpg" alt="YouTube"><span>empower23@yahoo.co.za</span></a>
+    </div>
+  </div>
+
+
+  <div id="background">
+    <div class="content">
+
+
+      <div class="left-side">
+        <div class="center">
+          <br>
+          <h2>Get in Touch with Us Telephonically!</h2>
+          <hr>
+          <h3>Line 1</h3>
+          <li>+27 21 655 7052</li>
+          <br>
+          <h3>Line 2</h3>
+          <li>+27 42 753 7002</li>
+          <br>
+          <h3>line 3</h3>
+          <li>+27 33 664 7792</li>
+        </div>
+        <hr>
+        <div class="center">
+          <h2>Or Pay Us a Visit at one of Our Locations!</h2>
+          <hr>
+          <h3>Johannesburg</h3>
+          <li>27 Commissioner strees</li>
+          <br>
+          <h3>Johannesburg</h3>
+          <li>27 Louis Botha Avenue</li>
+          <br>
+          <h3>Johannesburg</h3>
+          <li>Jan Smuts Avenue</li>
+        </div>
+
+      </div>
+
+
+      <div class="separator"></div>
+
+
+      <div class="right-side">
+        <div class="location-selector">
+          <label for="locations">Choose a location:</label>
+          <br>
+          <select name="locations" id="locations">
+            <option value="durban">27 Commissioner strees</option>
+            <option value="johannesburg">27 Louis Botha Avenue</option>
+            <option value="capetown">Jan Smuts Avenue</option>
+          </select>
+        </div>
+
+
+        <div id="map-container">
+          <iframe id="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.3835901264146!2d31.021840775287475!3d-29.858680225380816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7aa03352b8f03%3A0x60d77f356f8b690!2sDurban%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1694537025206!5m2!1sen!2sza"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Empowering The Nation <br>Owners Email: MathhewM32@gmail.com <br> Business Email:
+      Empowering22@yahoo.co.za</p>
+
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+      </div>
+    </nav>
+  </footer>
+  <script>
+
+    const locationSelector = document.getElementById('locations');
+    const mapIframe = document.getElementById('map');
+
+
+    function updateMap() {
+      const selectedLocation = locationSelector.value;
+
+      let mapSrc;
+      switch (selectedLocation) {
+        case 'durban':
+          mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.3835901264146!2d31.021840775287475!3d-29.858680225380816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7aa03352b8f03%3A0x60d77f356f8b690!2sDurban%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1694537025206!5m2!1sen!2sza';
+          break;
+        case 'johannesburg':
+          mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57256.73983158032!2d28.00002793138483!3d-26.204102395435867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950e90a3b12791%3A0x864a3a7bb13f6c85!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1694537225203!5m2!1sen!2sza';
+          break;
+        case 'capetown':
+          mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d330354.16655766634!2d18.40712330859661!3d-33.92899215271565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6767b0e5c605%3A0x588d1bb88283b08e!2sCape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1694537325175!5m2!1sen!2sza';
+          break;
+      }
+
+
+      mapIframe.src = mapSrc;
+    }
+
+
+    locationSelector.addEventListener('change', updateMap);
+  </script>
+
+</body>
+
+</html>

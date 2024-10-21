@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn New Skills Today</title>
+  <link href="styles.css" rel="stylesheet">
+  </link>
+</head>
+
+<body>
+  <header>
+    <img src="_images/logo.png" />
+    <p>Empowering the Nation</p>
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+  <div class="back-button-container">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+  </div>
+
+  <div id="img">
+    <img src="_images/courses/courseHero.jpg">
+    <div class="hero-text">Six Week Short Courses</div>
+  </div>
+
+  <div class="course-section">
+    <div class="course-cards-container">
+      <div class="course-card" onclick="loadCourseDetails('course1')">
+        <img src="_images/child.jpg" alt="Course Image 1">
+        <h3>Child Minding</h3>
+        <p>Price: R750</p>
+        <p>To provide basic child and baby care</p>
+      </div>
+      <div class="course-card" onclick="loadCourseDetails('course2')">
+        <img src="_images/cooking.jpg" alt="Course Image 2">
+        <h3>Cooking</h3>
+        <p>Price: R750</p>
+        <p>To prepare and cook nutritious family meals</p>
+      </div>
+      <div class="course-card" onclick="loadCourseDetails('course3')">
+        <img src="_images/garden.jpg" alt="Course Image 3">
+        <h3>Garden Maintenance</h3>
+        <p>Price: R750</p>
+        <p>To provide basic knowledge of watering, pruning in a domestic garden</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <p>&copy; 2024 Empowering The Nation <br>Owners Email: MathhewM32@gmail.com <br> Business Email:
+      Empowering22@yahoo.co.za</p>
+
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+      </div>
+    </nav>
+  </footer>
+  <script>
+    function loadCourseDetails(courseId) {
+      const courseData = {
+        course1: {
+          title: "Child Minding",
+          price: "R750",
+          description: "Our Child Minding Course is designed to teach students essential skills and knowledge required to care for children in various settings. In this course, you will learn about child development from infancy to early adolescence. The course emphasizes practical skills, including diaper changing, feeding, and managing nap schedules for younger children.",
+          imgSrc: "_images/enrol/children.jpg",
+          lessonPlan: [
+            "Lesson 1: birth to six-month old baby needs",
+            "Lesson 2: Toddler needs",
+            "Lesson 3: seven-month to one year old needs",
+            "Lesson 4: Educational toys"
+          ]
+        },
+        course2: {
+          title: "Cooking",
+          price: "R750",
+          description: "Our Cooking Course offers a hands-on practical approach to mastering the art of cooking, whether you are a beginner or looking to improve your culinary skills. This course covers a wide range of cooking techniques, from basic knife skills and ingredient preparation to more advanced methods such as sautéing, roasting, and baking. You will also explore different cuisines, learning how to create dishes from around the world using fresh, seasonal ingredients.",
+          imgSrc: "_images/enrol/food.jpg",
+          lessonPlan: [
+            "Lesson 1: Nutritional requirements for a healthy body",
+            "Lesson 2: Types of protein, carbohydrates and vegetables",
+            "Lesson 3: Planning meals",
+            "Lesson 4: Preparation and cooking of meals"
+          ]
+        },
+        course3: {
+          title: "Garden Maintenance",
+          price: "R750",
+          description: "The Garden Maintenance Course is perfect for anyone with a passion for plants and outdoor spaces. This course covers the fundamental skills required to care for and maintain a garden, regardless of its size or how complext it may be. You will learn about soil health, plant selection and watering techniques with a focus on sustainable gardening practices. The course also explores the seasonal needs of plants, helping you understand how to keep your garden thriving throughout the year.",
+          imgSrc: "_images/enrol/maintain.jpg",
+          lessonPlan: [
+            "Lesson 1: Water restrictions and the watering requirements of indigenous and exotic plants",
+            "Lesson 2: Pruning and propagation of plants",
+            "Lesson 3: Planting techniques for different plant types"
+          ]
+        }
+      };
+
+      const selectedCourse = courseData[courseId];
+
+   
+      localStorage.setItem('selectedCourse', JSON.stringify(selectedCourse));
+
+      
+      window.location.href = 'enrol.html';
+    }
+  </script>
+</body>
+
+</html>

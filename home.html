@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Courses, Learn New Skills</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="_images/logo.png" />
+    <p>Empowering the Nation</p>
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <img src="_images/home/hero.jpg" />
+  <div class="over-text">Over 1000 Courses for You Knowledge Hungry Intellects</div>
+
+  <div id="background">
+    <hr>
+    <div class="course-section">
+      <h2 class="center">Six-week Courses
+        <a href="week.html" class="view-all-btn">View All</a>
+      </h2>
+      <hr>
+      <div class="course-cards-container">
+        <div class="course-card" onclick="loadCourseDetails('course1')">
+          <img src="_images/child.jpg" alt="Course Image 1">
+          <h3>Child Minding</h3>
+          <p>Price: R750</p>
+          <p>To provide basic child and baby care</p>
+        </div>
+        <div class="course-card" onclick="loadCourseDetails('course2')">
+          <img src="_images/cooking.jpg" alt="Course Image 2">
+          <h3>Cooking</h3>
+          <p>Price: R750</p>
+          <p>To prepare and cook nutritious family meals</p>
+        </div>
+        <div class="course-card" onclick="loadCourseDetails('course3')">
+          <img src="_images/garden.jpg" alt="Course Image 3">
+          <h3>Garden Maintenance</h3>
+          <p>Price: R750</p>
+          <p>To provide basic knowledge of watering, pruning in a domestic garden</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="course-section">
+      <h2 class="center">Six-month Courses
+        <a href="month.html" class="view-all-btn">View All</a>
+      </h2>
+      <hr>
+      <div class="course-cards-container">
+        <div class="course-card" onclick="loadCourseDetails('course4')">
+          <img src="_images/firstAid.jpg" alt="Course Image 4">
+          <h3>First Aid</h3>
+          <p>Price: R1500</p>
+          <p>To provide awareness and basic life support</p>
+        </div>
+        <div class="course-card" onclick="loadCourseDetails('course5')">
+          <img src="_images/sew.jpg" alt="Course Image 5">
+          <h3>Sewing</h3>
+          <p>Price: R1500</p>
+          <p>To provide alterations and new garment tailoring services</p>
+        </div>
+        <div class="course-card" onclick="loadCourseDetails('course6')">
+          <img src="_images/landscaping.jpg" alt="Course Image 6">
+          <h3>Landscaping</h3>
+          <p>Price: R1500</p>
+          <p>To provide landscaping services and established gardens</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Empowering The Nation <br>Owners Email: MathhewM32@gmail.com <br> Business Email:
+      Empowering22@yahoo.co.za</p>
+
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+      </div>
+    </nav>
+  </footer>
+
+  <script>
+    function loadCourseDetails(courseId) {
+      const courseData = {
+        course1: {
+          title: "Child Minding",
+          price: "R750",
+          description: "Our Child Minding Course is designed to teach students essential skills and knowledge required to care for children in various settings. In this course, you will learn about child development from infancy to early adolescence. The course emphasizes practical skills, including diaper changing, feeding, and managing nap schedules for younger children.",
+          imgSrc: "_images/enrol/children.jpg",
+          lessonPlan: [
+            "Lesson 1: birth to six-month old baby needs",
+            "Lesson 2: Toddler needs",
+            "Lesson 3: seven-month to one year old needs",
+            "Lesson 4: Educational toys"
+          ]
+        },
+        course2: {
+          title: "Cooking",
+          price: "R750",
+          description: "Our Cooking Course offers a hands-on practical approach to mastering the art of cooking, whether you are a beginner or looking to improve your culinary skills. This course covers a wide range of cooking techniques, from basic knife skills and ingredient preparation to more advanced methods such as sautéing, roasting, and baking. You will also explore different cuisines, learning how to create dishes from around the world using fresh, seasonal ingredients.",
+          imgSrc: "_images/enrol/food.jpg",
+          lessonPlan: [
+            "Lesson 1: Nutritional requirements for a healthy body",
+            "Lesson 2: Types of protein, carbohydrates and vegetables",
+            "Lesson 3: Planning meals",
+            "Lesson 4: Preparation and cooking of meals"
+          ]
+        },
+        course3: {
+          title: "Garden Maintenance",
+          price: "R750",
+          description: "The Garden Maintenance Course is perfect for anyone with a passion for plants and outdoor spaces. This course covers the fundamental skills required to care for and maintain a garden, regardless of its size or how complext it may be. You will learn about soil health, plant selection and watering techniques with a focus on sustainable gardening practices. The course also explores the seasonal needs of plants, helping you understand how to keep your garden thriving throughout the year.",
+          imgSrc: "_images/enrol/maintain.jpg",
+          lessonPlan: [
+            "Lesson 1: Water restrictions and the watering requirements of indigenous and exotic plants",
+            "Lesson 2: Pruning and propagation of plants",
+            "Lesson 3: Planting techniques for different plant types"
+          ]
+        },
+        course4: {
+          title: "First Aid",
+          price: "R1500",
+          description: "The First Aid Course is designed to provide participants with the knowledge and skills to respond effectively in emergency situations. This course covers a wide range of first aid topics, including CPR, wound care, fracture management, and how to assist someone experiencing a medical emergency such as a heart attack, stroke, or allergic reaction. You will learn how to assess a situation, provide immediate care, and ensure that professional medical help is on the way.",
+          imgSrc: "_images/enrol/aid.jpg",
+          lessonPlan: [
+            "Lesson 1: Wounds and bleeding",
+            "Lesson 2: Burns and fractures",
+            "Lesson 3: Emergency scene management",
+            "Lesson 4: Cardio-Pulmonary Resuscitation (CPR)",
+            "Lesson 5: Respiratory distress e.g., Choking, blocked airway"
+          ]
+        },
+        course5: {
+          title: "Sewing",
+          price: "R1500",
+          description: "The Sewing Course is ideal for anyone interested in learning the art of sewing, whether as a hobby or for professional development. This course covers both hand sewing and machine sewing techniques, teaching you how to create clothing, accessories, and home décor items from scratch. You will learn how to read and follow sewing patterns, select the right fabrics, and use sewing tools and equipment.",
+          imgSrc: "_images/enrol/sewing.jpg",
+          lessonPlan: [
+            "Lesson 1: Types of stitches",
+            "Lesson 2: Threading a sewing machine",
+            "Lesson 3: Sewing buttons, zips, hems and seams",
+            "Lesson 4: Alterations",
+            "Lesson 5: Designing and sewing new garments "
+          ]
+        },
+        course6: {
+          title: "Landscaping",
+          price: "R1500",
+          description: "The Landscaping Course offers a comprehensive introduction to the principles and practices of landscape design and management. Whether you are a home owner looking to enhance your outdoor space or aspiring to a career in landscaping, this course provides the skills and knowledge needed to create beautiful, functional landscapes. You will learn about plant selection, garden layout, soil preparation, and water management.",
+          imgSrc: "_images/enrol/scaping.jpg",
+          lessonPlan: [
+            "Lesson 1: Indigenous and exotic plants and trees",
+            "Lesson 2: Fixed structures (fountains, statues, benches, tables, built-in braai)",
+            "Lesson 3: Balancing of plants and trees in a garden",
+            "Lesson 4: Aesthetics of plant shapes and colours",
+            "Lesson 5: Garden layout"
+
+          ]
+        }
+      };
+
+      const selectedCourse = courseData[courseId];
+
+
+      localStorage.setItem('selectedCourse', JSON.stringify(selectedCourse));
+
+
+      window.location.href = 'enrol.html';
+    }
+  </script>
+</body>
+
+</html>

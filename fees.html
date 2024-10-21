@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn New Skills Today</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="_images/logo.png" alt="Logo" />
+    <p>Empowering the Nation</p>
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+  <div class="back-button-container">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+  </div>
+
+  <div id="img">
+    <img src="_images/fees/feesHero.jpg" alt="Fees Hero Image">
+  </div>
+  <hr>
+  <h1 class="center">Get Your Journey Started Today!</h1>
+  <hr>
+  <main>
+    <form onsubmit="return false;">
+      <li>
+        <label for="fname">Enter Your Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Name and Surname">
+      </li>
+      <li>
+        <label for="email">Enter Your Email:</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+      </li>
+      <li>
+        <label for="number">Enter Your Phone Number:</label>
+        <input type="text" id="number" name="number" placeholder="Phone Number">
+      </li>
+      <li>
+        <label for="bankNumber">Enter Your Bank Number:</label>
+        <input type="text" id="bankNumber" name="bankNumber" placeholder="Bank Number">
+      </li>
+      <li>
+        <label for="courses">Select Courses:</label>
+        <div class="dropdown">
+          <div class="dropdown-select" onclick="toggleDropdown()">
+            <span id="selectedCourses">Select courses...</span>
+            <span>&#9662;</span>
+          </div>
+          <div class="dropdown-options" id="dropdownOptions">
+            <div data-value="first aid">First Aid - R1500</div>
+            <div data-value="sewing">Sewing - R1500</div>
+            <div data-value="landscaping">Landscaping - R1500</div>
+            <div data-value="life skills">Life Skills - R1500</div>
+            <div data-value="child minding">Child Minding - R750</div>
+            <div data-value="cooking">Cooking - R750</div>
+            <div data-value="garden maintenance">Garden Maintenance - R750</div>
+          </div>
+        </div>
+        <p class="selected-courses" id="selectedCoursesText"></p>
+      </li>
+      <li>
+        <label for="total">Total Fee:</label>
+        <input type="text" id="total" name="total" placeholder="Total Fee" readonly>
+      </li>
+      <button type="button" onclick="calculateTotal()">Calculate Total Fee</button>
+      <button type="button" onclick="validateAndSubmit()">Submit</button>
+    </form>
+    <br>
+  </main>
+  <script>
+    let selectedCourses = [];
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdownOptions');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('dropdownOptions');
+      const target = event.target;
+      if (dropdown.contains(target)) {
+        const value = target.getAttribute('data-value');
+        if (value) {
+          if (selectedCourses.includes(value)) {
+            selectedCourses = selectedCourses.filter(course => course !== value);
+            target.style.backgroundColor = ''; 
+          } else {
+            selectedCourses.push(value);
+            target.style.backgroundColor = '#f1f1f1'; 
+          }
+          updateSelectedCourses();
+        }
+      } else if (!dropdown.contains(target) && target.className !== 'dropdown-select') {
+        dropdown.style.display = 'none'; 
+      }
+    });
+
+    function updateSelectedCourses() {
+      const selectedCoursesText = document.getElementById('selectedCoursesText');
+      document.getElementById('selectedCourses').innerText = selectedCourses.length ? selectedCourses.join(', ') : 'Select courses...';
+      selectedCoursesText.innerText = selectedCourses.length ? `Selected courses: ${selectedCourses.join(', ')}` : '';
+    }
+
+    function calculateTotal() {
+      const prices = {
+        'first aid': 1500,
+        'sewing': 1500,
+        'landscaping': 1500,
+        'life skills': 1500,
+        'child minding': 750,
+        'cooking': 750,
+        'garden maintenance': 750,
+      };
+
+      let total = 0;
+
+      selectedCourses.forEach(course => {
+        total += prices[course];
+      });
+
+      const numberOfCourses = selectedCourses.length;
+      let discount = 0;
+
+      if (numberOfCourses === 2) {
+        discount = 0.05; 
+      } else if (numberOfCourses === 3) {
+        discount = 0.10; 
+      } else if (numberOfCourses > 3) {
+        discount = 0.15;
+      }
+
+      total -= total * discount; 
+      const vat = total * 0.15;
+      total += vat; 
+      document.getElementById('total').value = total.toFixed(2); 
+    }
+
+    function validateAndSubmit() {
+      const fname = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const number = document.getElementById('number').value;
+      const bankNumber = document.getElementById('bankNumber').value;
+
+      if (!fname || !email || !number || !bankNumber || selectedCourses.length === 0) {
+        alert('Please fill in all fields');
+        return; 
+      }
+
+      alert('Purchase successful!');
+
+      document.getElementById('fname').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('number').value = '';
+      document.getElementById('bankNumber').value = '';
+      selectedCourses = [];
+      updateSelectedCourses();
+      document.getElementById('total').value = '';
+    }
+  </script>
+  <footer>
+    <p>&copy; 2024 Empowering The Nation <br>Owners Email: MathhewM32@gmail.com <br> Business Email:
+      Empowering22@yahoo.co.za</p>
+
+    <nav id="box1">
+      <div>
+        <a href="home.html">Home</a>
+        <a href="courses.html">All Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fees.html">Billing</a>
+      </div>
+    </nav>
+  </footer>
+</body>
+
+</html>
